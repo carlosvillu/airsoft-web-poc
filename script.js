@@ -4,4 +4,4 @@ import {
 } from "https://npm.reversehttp.com/preact,preact/hooks,htm/preact";
 import { App } from "./App.js";
 
-render(c(App));
+render(c(App), document.getElementById("app"));
