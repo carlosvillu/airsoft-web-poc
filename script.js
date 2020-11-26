@@ -1,3 +1,7 @@
-import { render } from "https://npm.reversehttp.com/preact,preact/hooks,htm/preact";
+import {
+  render,
+  createElement as c
+} from "https://npm.reversehttp.com/preact,preact/hooks,htm/preact";
+import { App } from "./App.js";
 
-render();
+render(c(App));
