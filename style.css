@@ -13,15 +13,19 @@
   --space-xs: calc(var(--space-s) / 2);
   
   --color-primary: #373fff;
+  --color-secondary: #5b982f;
 }
 
 /* UTILITIES */
 
-.f-f {font-family: var(--font-family)}
-.f-s {font-style: italic;}
+.ff {font-family: var(--font-family)}
+.fs {font-style: italic;}
 
 .m-l{margin: var(--space-l);}
 .m-s{margin: var(--space-s);}
 .m-xs{margin: var(--space-xs);}
 
 .c-primary {color: var(--color-primary);}
+.c-secondary {color: var(--color-secondary);}
+
+.bgc-secondary {background-color: var(--color-secondary);}
