@@ -1,5 +1,3 @@
-/*global h*/
-
 import {
   useState,
   html,
