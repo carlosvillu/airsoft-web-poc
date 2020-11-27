@@ -12,6 +12,8 @@ import { Home } from '../Home/Home.js'
 
 const App = () => {
   const [name, setName] = useState('Carlitos')
+  
+  return window.html``
 
   return c(Router, null, [
     c(Home, { path: '/' }),
