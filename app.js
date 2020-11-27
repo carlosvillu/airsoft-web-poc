@@ -1,3 +1,5 @@
+/*global h*/
+
 import {
   htm,
   render,
@@ -10,10 +12,10 @@ function h(type, props, ...children) {
   return { type, props, children }
 }
 
-window.html = htm.bind(h)
+window.h = htm.bind(h)
 
 render(
-  window.html`
+  h`
     <${App} />
   `,
   document.getElementById('app')

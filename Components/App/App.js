@@ -1,3 +1,5 @@
+/*global h*/
+
 import {
   useState,
   createElement as c,
@@ -12,17 +14,14 @@ import { Home } from '../Home/Home.js'
 
 const App = () => {
   const [name, setName] = useState('Carlitos')
-  
-  return window.html``
 
-  return c(Router, null, [
-    c(Home, { path: '/' }),
-    c(AsyncRoute, {
-      path: '/hello',
-      getComponent: () => import('../Hello/Hello.js').then(m => m.Hello),
-    }),
-  ])
-
+  return h`
+    <${Router}>
+      <${Home} path='/' />
+      <${AsyncRoute} path='/hello' getComponent={${() =>
+    import('../Hello/Hello.js').then(m => m.Hello)}}/>
+    </${Router}>
+  `
   // return c('h1', null, name)
 }
 
