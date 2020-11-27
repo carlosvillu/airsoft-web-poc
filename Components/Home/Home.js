@@ -1,7 +1,12 @@
-import { htm, createElement as c } from 'https://npm.reversehttp.com/preact,preact/hooks,htm/preact'
+import { html } from 'https://npm.reversehttp.com/preact,preact/hooks,htm/preact'
 
 const Home = () => {
-  return c('h1', null, c('a', { href: '/hello' }, 'This is Home, go to Hello'))
+  return html`
+    <h1>
+      This is home, go to
+      <a href="/hello">hello</a>
+    </h1>
+  `
 }
 
 export { Home }

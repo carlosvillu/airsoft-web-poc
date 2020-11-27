@@ -2,7 +2,7 @@
 
 import {
   useState,
-  createElement as c,
+  html,
 } from 'https://npm.reversehttp.com/preact,preact/hooks,htm/preact'
 
 import {
@@ -10,19 +10,18 @@ import {
   preact_async_route as AsyncRoute,
 } from 'https://npm.reversehttp.com/preact-async-route,preact-router'
 
-import { Home } from '../Home/Home.js'
+const loadHome = () => import('../Home/Home.js').then(m => m.Home)
+const loadHello = () => import('../Hello/Hello.js').then(m => m.Hello)
 
 const App = () => {
   const [name, setName] = useState('Carlitos')
 
-  return h`
+  return html`
     <${Router}>
-      <${Home} path='/' />
-      <${AsyncRoute} path='/hello' getComponent={${() =>
-    import('../Hello/Hello.js').then(m => m.Hello)}}/>
+      <${AsyncRoute} path='/' getComponent=${loadHome}/>
+      <${AsyncRoute} path='/hello' getComponent=${loadHello}/>
     </${Router}>
   `
-  // return c('h1', null, name)
 }
 
 export { App }
