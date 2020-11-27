@@ -1,8 +1,21 @@
 /* CSS files add styling rules to your content */
 
+:root {
+  --base-size: 5px;
+  
+  --space-l: calc(var(--space-s) * 2);
+  --space-s: var(--base-size);
+  --space-xs: calc(var(--space-s) / 2);   
+}
+
+
+.m-l{margin: var(--space-l)}
+.m-s{margin: var(--space-s)}
+.m-xs{margin: var(--space-xs)}
+
+
 body {
   font-family: helvetica, arial, sans-serif;
-  margin: 2em;
 }
 
 h1 {
