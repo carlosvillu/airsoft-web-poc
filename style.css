@@ -13,7 +13,10 @@
   --space-xs: calc(var(--space-s) / 2);
   
   --color-primary: #373fff;
+  
+  --color-secondary-ligther-1: #c4dcb3;
   --color-secondary: #5b982f;
+  
 }
 
 /* UTILITIES */
@@ -25,7 +28,14 @@
 .m-s{margin: var(--space-s);}
 .m-xs{margin: var(--space-xs);}
 
+.pr-l{padding-right: var(--space-l);}
+.pr-s{padding-right: var(--space-s);}
+.pr-xs{padding-right: var(--space-xs);}
+
 .c-primary {color: var(--color-primary);}
+
+.c-secondary-ligther-1 {color: var(--color-secondary-ligther-1);}
 .c-secondary {color: var(--color-secondary);}
 
-.bgc-secondary {background-color: var(--color-secondary);}
+.bgc-secondary-ligther-1 {background-color: var(--color-secondary-ligther-1);}
+.bgc-secondary{background-color: var(--color-secondary);}
