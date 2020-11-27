@@ -18,8 +18,8 @@ const App = () => {
 
   return html`
     <${Router}>
-      <${AsyncRoute} path='/' getComponent=${loadHome}/>
-      <${AsyncRoute} path='/hello' getComponent=${loadHello}/>
+      <${AsyncRoute} path='/' getComponent=${loadHome} />
+      <${AsyncRoute} path='/hello' getComponent=${loadHello} />
     </${Router}>
   `
 }
