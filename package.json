@@ -1,0 +1,30 @@
+{
+  "name": "project-barebone",
+  "version": "1.0.0",
+  "description": "Welcome to Glitch =================",
+  "main": "app.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@s-ui/lint": "3",
+    "serve": "11.3.2"
+  },
+  "scripts": {
+    "start": "npx serve . -s -p 3000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://991a35cc-9a3d-43d7-af9a-6c4b03641efd@api.glitch.com/git/cyan-elderly-hamburger"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "eslintConfig": {
+    "extends": [
+      "./node_modules/@s-ui/lint/eslintrc.js"
+    ]
+  },
+  "prettier": "./node_modules/@s-ui/lint/.prettierrc.js",
+  "stylelint": {
+    "extends": "./node_modules/@s-ui/lint/stylelint.config.js"
+  }
+}

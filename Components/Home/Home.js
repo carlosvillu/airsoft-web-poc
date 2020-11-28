@@ -1,4 +1,4 @@
-import { html } from 'https://npm.reversehttp.com/preact,preact/hooks,htm/preact'
+import {html} from 'https://npm.reversehttp.com/preact,preact/hooks,htm/preact'
 
 const Home = () => {
   return html`
@@ -9,4 +9,4 @@ const Home = () => {
   `
 }
 
-export { Home }
+export {Home}
