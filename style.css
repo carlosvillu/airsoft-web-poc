@@ -12,10 +12,13 @@
   --space-s: var(--base-size);
   --space-xs: calc(var(--space-s) / 2);
   
+  --color-primary-ligther-1: #373fff;
   --color-primary: #373fff;
+  --color-primary-darker-1: #373fff;
   
   --color-secondary-ligther-1: #c4dcb3;
   --color-secondary: #5b982f;
+  --color-secondary-darker-1: #c4dcb3;
   
 }
 

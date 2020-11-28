@@ -6,13 +6,11 @@ import {
 } from 'https://npm.reversehttp.com/preact-async-route,preact-router'
 
 const loadHome = () => import('../Home/Home.js').then(m => m.Home)
-const loadHello = () => import('../Hello/Hello.js').then(m => m.Hello)
 
 const App = () => {
   return html`
     <${Router}>
       <${AsyncRoute} path='/' getComponent=${loadHome} />
-      <${AsyncRoute} path='/hello' getComponent=${loadHello} />
     </${Router}>
   `
 }

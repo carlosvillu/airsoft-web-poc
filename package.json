@@ -1,7 +1,7 @@
 {
   "name": "project-barebone",
   "version": "1.0.0",
-  "description": "Welcome to Glitch =================",
+  "description": "Airsof PoC Web",
   "main": "app.js",
   "dependencies": {},
   "devDependencies": {

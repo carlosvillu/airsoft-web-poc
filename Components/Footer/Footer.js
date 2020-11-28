@@ -1,9 +1,9 @@
 import {html} from 'https://npm.reversehttp.com/preact,preact/hooks,htm/preact'
 
-const Hello = () => {
+const Footer = ({children}) => {
   return html`
-    <h1>Hello!!!!!!!</h1>
+    <footer>Footer</footer>
   `
 }
 
-export {Hello}
+export {Footer}
