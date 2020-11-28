@@ -1,15 +1,23 @@
+/* stylelint-disable*/
 /* CSS files add styling rules to your content */
 /* RESET */
 *,::after,::before{box-sizing:border-box}:root{-moz-tab-size:4;tab-size:4}html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji'}hr{height:0;color:inherit}abbr[title]{text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}::-moz-focus-inner{border-style:none;padding:0}:-moz-focusring{outline:1px dotted ButtonText}:-moz-ui-invalid{box-shadow:none}legend{padding:0}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}
 
 /* VARS */
 :root {
-  --base-size: 5px;
+  /* BASES*/
+  --base-space: 4px;
+  --base-size: 50px;
   
   --font-family: helvetica, arial, sans-serif;
-  
+
+  --size-xxxl: calc(var(--base-size) * 6);
+  --size-l: calc(var(--size-s) * 2);
+  --size-s: var(--base-size);
+  --size-xs: calc(var(--size-s) / 2);  
+
   --space-l: calc(var(--space-s) * 2);
-  --space-s: var(--base-size);
+  --space-s: var(--base-space);
   --space-xs: calc(var(--space-s) / 2);
   
   --color-primary-ligther-1: #373fff;
@@ -19,26 +27,41 @@
   --color-secondary-ligther-1: #c4dcb3;
   --color-secondary: #5b982f;
   --color-secondary-darker-1: #c4dcb3;
+
+  --z-base-index: 0;
+  --z-max-index: calc(var(--z-base-index) + 1)
   
 }
 
 /* UTILITIES */
 
+.bgc-secondary-ligther-1 {background-color: var(--color-secondary-ligther-1);}
+.bgc-secondary{background-color: var(--color-secondary);}
+
+.c-primary {color: var(--color-primary);}
+.c-secondary {color: var(--color-secondary);}
+.c-secondary-ligther-1 {color: var(--color-secondary-ligther-1);}
+
 .ff {font-family: var(--font-family)}
 .fs {font-style: italic;}
+
+.h-xxxl {height: var(--size-xxxl);}
+.h-base {height: var(--size-s);}
+.h:300 {height: 300px;}
 
 .m-l{margin: var(--space-l);}
 .m-s{margin: var(--space-s);}
 .m-xs{margin: var(--space-xs);}
 
+.pos:fixed {position: fixed;}
+
 .pr-l{padding-right: var(--space-l);}
 .pr-s{padding-right: var(--space-s);}
 .pr-xs{padding-right: var(--space-xs);}
 
-.c-primary {color: var(--color-primary);}
+.t-init {top: 0;}
 
-.c-secondary-ligther-1 {color: var(--color-secondary-ligther-1);}
-.c-secondary {color: var(--color-secondary);}
+.w-full {width: 100%}
 
-.bgc-secondary-ligther-1 {background-color: var(--color-secondary-ligther-1);}
-.bgc-secondary{background-color: var(--color-secondary);}
+.z-base {z-index: var(--z-base-index)}
+.z-max {z-index: var(--z-max-index)}

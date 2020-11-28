@@ -1,4 +1,5 @@
 import {html} from 'https://npm.reversehttp.com/preact,preact/hooks,htm/preact'
+import {Layout} from '../Layout/Layout.js'
 
 import {
   Router,
@@ -9,9 +10,11 @@ const loadHome = () => import('../Home/Home.js').then(m => m.Home)
 
 const App = () => {
   return html`
+  <${Layout}>
     <${Router}>
       <${AsyncRoute} path='/' getComponent=${loadHome} />
     </${Router}>
+  </${Layout}>  
   `
 }
 

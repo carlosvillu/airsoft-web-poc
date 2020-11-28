@@ -1,9 +1,9 @@
 import {html} from 'https://npm.reversehttp.com/preact,preact/hooks,htm/preact'
 
-const Topbar = ({children}) => {
+const Sidebar = () => {
   return html`
-    <div>TOPBAR</div>
+    <div>sidebar</div>
   `
 }
 
-export {Topbar}
+export {Sidebar}
