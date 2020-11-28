@@ -12,6 +12,8 @@
   --font-family: helvetica, arial, sans-serif;
 
   --size-xxxl: calc(var(--base-size) * 6);
+  --size-xxl: calc(var(--base-size) * 5);
+  --size-xl: calc(var(--base-size) * 4);
   --size-l: calc(var(--size-s) * 2);
   --size-s: var(--base-size);
   --size-xs: calc(var(--size-s) / 2);  
@@ -42,18 +44,38 @@
 .c-secondary {color: var(--color-secondary);}
 .c-secondary-ligther-1 {color: var(--color-secondary-ligther-1);}
 
+.d_grid {display: grid;}
+
 .ff {font-family: var(--font-family)}
 .fs {font-style: italic;}
 
+.ga-header { grid-area: header; }
+.ga-nav { grid-area: nav; }
+.ga-content { grid-area: content; }
+.ga-footer { grid-area: footer; }
+/*https://www.digitalocean.com/community/tutorials/css-css-grid-holy-grail-layout*/
+.gta-holy-layout {
+  grid-template-areas:
+    "header header"
+    "nav content"
+    "footer footer";
+}
+.gtc-holy-layout { grid-template-columns: var(--size-xl) 1fr;}
+.gtr-holy-layout { grid-template-rows: auto 1fr;}
+.gg-holy-layout { grid-gap: var(--space-l);}
+
+.h-s {height: var(--size-s);}
+.h-full {height: 100%;}
 .h-xxxl {height: var(--size-xxxl);}
-.h-base {height: var(--size-s);}
-.h:300 {height: 300px;}
+.h_300 {height: 300px;}
+.h_100vh {height: 100vh;}
 
 .m-l{margin: var(--space-l);}
 .m-s{margin: var(--space-s);}
 .m-xs{margin: var(--space-xs);}
 
-.pos:fixed {position: fixed;}
+.pos_fixed {position: fixed;}
+.pos_relative {position: relative;}
 
 .pr-l{padding-right: var(--space-l);}
 .pr-s{padding-right: var(--space-s);}
@@ -62,6 +84,12 @@
 .t-init {top: 0;}
 
 .w-full {width: 100%}
+.w-xxl {width: var(--size-xxl);}
 
 .z-base {z-index: var(--z-base-index)}
 .z-max {z-index: var(--z-max-index)}
+
+
+/* HELPERS */
+
+.debug {border: 1px solid red;}
