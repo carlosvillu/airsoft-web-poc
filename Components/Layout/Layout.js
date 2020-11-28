@@ -8,19 +8,19 @@ const Layout = ({children}) => {
     <section
       class="d_grid gta-holy-layout gtc-holy-layout gtr-holy-layout gg-holy-layout h_100vh"
     >
-      <header class="debug ga-header h-s">
+      <header class="debug ga_header h-s">
         <${Topbar} />
       </header>
 
-      <nav class="ga-nav debug">
+      <nav class="ga_nav debug">
         <${Navigation} />
       </nav>
 
-      <main class="ga-content debug">
+      <main class="ga_content debug">
         ${children}
       </main>
 
-      <footer class="ga-footer debug">
+      <footer class="ga_footer h-s debug">
         <${Footer} />
       </footer>
     </section>
