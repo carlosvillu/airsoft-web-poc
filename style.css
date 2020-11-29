@@ -8,6 +8,10 @@
   /* BASES*/
   --base-space: 4px;
   --base-size: 50px;
+
+  --tablet-width: 640px;
+  --laptop-width: 1024px;
+  --desktop-width: 1280px;
   
   --font-family: helvetica, arial, sans-serif;
 
@@ -47,7 +51,7 @@
 
 .d_flex {display: flex;}
 .d_grid {display: grid;}
-
+.d_none {display: none;}
 
 .ff {font-family: var(--font-family)}
 .fs_italic {font-style: italic;}
@@ -57,15 +61,16 @@
 .ga_header { grid-area: header; }
 .ga_nav { grid-area: nav; }
 .ga_content { grid-area: content; }
+.ga_side { grid-area: side; }
 .ga_footer { grid-area: footer; }
 /*https://www.digitalocean.com/community/tutorials/css-css-grid-holy-grail-layout*/
 .gta-holy-layout {
   grid-template-areas:
-    "header header"
-    "nav content"
-    "footer footer";
+    "header"
+    "content"
+    "footer";
 }
-.gtc-holy-layout { grid-template-columns: var(--size-xl) 1fr;}
+.gtc-holy-layout { grid-template-columns: 1fr;}
 .gtr-holy-layout { grid-template-rows: auto 1fr;}
 .gg-holy-layout { grid-gap: var(--space-none);}
 
@@ -94,6 +99,36 @@
 .z-base {z-index: var(--z-base-index)}
 .z-max {z-index: var(--z-max-index)}
 
+/* Media Queries */
+
+/* Tablet, Laptop, Desktop */
+@media (min-width: 640px) {
+  .tld__d_block {display: block;}
+
+  .tld__gta-holy-layout {
+    grid-template-areas:
+      "header header"
+      "nav content"
+      "footer footer";
+  }
+  .tld__gtc-holy-layout { grid-template-columns: var(--size-xl) 1fr;}
+}
+
+/* Laptop, Desktop */
+@media (min-width: 1024px) {}
+
+/* Desktop */
+@media (min-width: 1280px) {
+  .d__d_block {display: block;}
+
+  .d__gta-holy-layout {
+    grid-template-areas:
+      "header header header"
+      "nav content side"
+      "footer footer footer";
+  }
+  .d__gtc-holy-layout { grid-template-columns: var(--size-xl) 1fr var(--size-s)}
+}
 
 /* HELPERS */
 
