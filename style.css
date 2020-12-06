@@ -6,9 +6,14 @@
 /* VARS */
 :root {
   /* BASES*/
+  --base-radius: 4px;
   --base-space: 4px;
   --base-size: 50px;
   --font-family: helvetica, arial, sans-serif;
+  --radius-l: calc(var(--radius-s) * 2);
+  --radius-s: var(--base-radius);
+  --radius-xs: calc(var(--radius-s) / 2);
+  --radius-none: calc(var(--base-radius) * 0);
   --size-xxxl: calc(var(--base-size) * 6);
   --size-xxl: calc(var(--base-size) * 5);
   --size-xl: calc(var(--base-size) * 4);
@@ -19,27 +24,86 @@
   --space-s: var(--base-space);
   --space-xs: calc(var(--space-s) / 2);
   --space-none: calc(var(--base-space) * 0);
-  --color-primary-ligther-1: #373fff;
-  --color-primary: #373fff;
-  --color-primary-darker-1: #373fff;
-  --color-secondary-ligther-1: #c4dcb3;
-  --color-secondary: #5b982f;
-  --color-secondary-darker-1: #c4dcb3;
+
+
+ /* Colors Palette */
+
+ --c-gradient-base: 10%;
+ --c-gradient-1: calc(var(--c-gradient-base) * 2);
+ --c-gradient-2: calc(var(--c-gradient-base) * 3);
+ --c-gradient-3: calc(var(--c-gradient-base) * 4);
+
+  --c-primary-l-3: hsl(60, 12%, calc( 60% + var(--c-gradient-2)));
+  --c-primary-l-2: hsl(60, 12%, calc( 60% + var(--c-gradient-1)));
+  --c-primary-l-1: hsl(60, 12%, calc( 60% + var(--c-gradient-base)));
+
+  --c-primary: hsl(60, 12%, 60%);
+  
+  --c-primary-d-1: hsl(60, 12%, calc( 60% - var(--c-gradient-base)));
+  --c-primary-d-2: hsl(60, 12%, calc( 60% - var(--c-gradient-1)));
+  --c-primary-d-3: hsl(60, 12%, calc( 60% - var(--c-gradient-2)));
+  
+  --c-secondary-l-3: hsl(21, 43%, calc( 65% + var(--c-gradient-2)));
+  --c-secondary-l-2: hsl(21, 43%, calc( 65% + var(--c-gradient-1)));
+  --c-secondary-l-1: hsl(21, 43%, calc( 65% + var(--c-gradient-base)));
+
+  --c-secondary: hsl(21, 43%, 65%);
+
+  --c-secondary-d-1: hsl(21, 43%, calc( 65% - var(--c-gradient-base)));
+  --c-secondary-d-2: hsl(21, 43%, calc( 65% - var(--c-gradient-1)));
+  --c-secondary-d-3: hsl(21, 43%, calc( 65% - var(--c-gradient-2)));
+
+  --c-accent-l-3: hsl(48, 14%, calc( 93% + var(--c-gradient-2)));
+  --c-accent-l-2: hsl(48, 14%, calc( 93% + var(--c-gradient-1)));
+  --c-accent-l-1: hsl(48, 14%, calc( 93% + var(--c-gradient-base)));
+
+  --c-accent: hsl(48, 14%, 93%);
+
+  --c-accent-d-1: hsl(48, 14%, calc( 93% - var(--c-gradient-base)));
+  --c-accent-d-2: hsl(48, 14%, calc( 93% - var(--c-gradient-1)));
+  --c-accent-d-3: hsl(48, 14%, calc( 93% - var(--c-gradient-2)));
+
+  --c-error: hsl(346, 84%, 61%);
+  --c-success: hsl(164, 95%, 43%);
+  --c-warning: hsl(42, 100%, 70%);
+
+  
   --z-base-index: 0;
   --z-max-index: calc(var(--z-base-index) + 1);
+
+  /* BOX-SHADOW */
 }
+
+
+
+
 
 /* UTILITIES */
 
 .ai_center {align-items: center;}
 
-.bgc_white {background-color: white;}
-.bgc-secondary-ligther-1 {background-color: var(--color-secondary-ligther-1);}
-.bgc-secondary{background-color: var(--color-secondary);}
+.bd_none {border: none;}
+.hover--bd-debug:hover {border: 1px solid red;}
 
-.c-primary {color: var(--color-primary);}
-.c-secondary {color: var(--color-secondary);}
-.c-secondary-ligther-1 {color: var(--color-secondary-ligther-1);}
+.bdrs-l {border-radius: var(--radius-l);}
+.hover--bdrs-l:hover {border-radius: var(--radius-l);}
+
+.bgc_transparent {background-color: transparent;}
+.bgc_white {background-color: white;}
+.bgc-accent{background-color:var( --c-accent);}
+.bgc-error {background-color: var(--c-error);}
+.bgc-primary {background-color: var(--c-primary);}
+.bgc-secondary{background-color: var(--c-secondary);}
+.bgc-success {background-color: var(--c-success);}
+.bgc-warning {background-color: var(--c-warning);}
+
+.c-accent {color: var( --c-accent);}
+.c-error {color: var( --c-error);}
+.c-primary {color: var(--c-primary);}
+.c-secondary {color: var(--c-secondary);}
+.c-secondary-l-1 {color: var(--c-secondary-l-1);}
+.c-success {color: var( --c-success);}
+.c-warning {color: var( --c-warning);}
 
 .d_flex {display: flex;}
 .d_grid {display: grid;}
@@ -66,6 +130,8 @@
 .gtc-holy-layout { grid-template-columns: 1fr;}
 .gtr-holy-layout { grid-template-rows: auto 1fr;}
 .gg-holy-layout { grid-gap: var(--space-none);}
+
+
 
 .h-s {height: var(--size-s);}
 .h-full {height: 100%;}

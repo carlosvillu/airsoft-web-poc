@@ -4,7 +4,10 @@ const array = ['foo', 'bar']
 const Navigation = () => {
   return html`
     <div class="d_flex fxd_column">
-      ${array.map(label => html`<${Button}>${label}</${Button}>`)}
+      ${array.map(
+        label =>
+          html`<${Button} full type="${Button.TYPES.FLAT}">${label}</${Button}>`
+      )}
     </div>
   `
 }

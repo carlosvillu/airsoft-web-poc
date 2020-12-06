@@ -1,9 +1,21 @@
+/* global classNames */
 import {html} from 'https://npm.reversehttp.com/preact,preact/hooks,htm/preact'
+import 'https://npm.reversehttp.com/classnames'
 
-const Button = ({children}) => {
+const Button = ({children, full, type}) => {
+  const classButton = classNames(STYLES_BY_TYPE[type], {
+    'w-full': full
+  })
   return html`
-    <button class="w-full">${children}</button>
+    <button class="${classButton}">${children}</button>
   `
 }
+Button.TYPES = {
+  FLAT: 'flat'
+}
 
+const STYLES_BY_TYPE = {
+  [Button.TYPES.FLAT]:
+    'bgc_transparent c-accent bd_none hover--bdrs-l hover--bd-debug'
+}
 export {Button}
