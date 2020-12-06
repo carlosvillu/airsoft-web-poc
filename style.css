@@ -73,6 +73,8 @@
 .h_300 {height: 300px;}
 .h_100vh {height: 100vh;}
 
+.jc_flex-end {justify-content: flex-end;}
+
 .l-init {left: 0;}
 
 .m-l{margin: var(--space-l);}
@@ -85,6 +87,9 @@
 .pos_fixed {position: fixed;}
 .pos_relative {position: relative;}
 
+.pl-l{padding-left: var(--space-l);}
+.pl-s{padding-left: var(--space-s);}
+.pl-xs{padding-left: var(--space-xs);}
 .pr-l{padding-right: var(--space-l);}
 .pr-s{padding-right: var(--space-s);}
 .pr-xs{padding-right: var(--space-xs);}
@@ -102,6 +107,7 @@
 
 /* Tablet, Laptop, Desktop */
 @media (min-width: 640px) {
+  .tld__d_none {display: none;}
   .tld__d_block {display: block;}
 
   .tld__gta-holy-layout {

@@ -6,23 +6,23 @@ import {
 import 'https://npm.reversehttp.com/classnames'
 
 import {MenuSVG} from '../SVG/Menu.js'
+import {CloseSVG} from '../SVG/Close.js'
 
 const Menu = ({children}) => {
   const [open, setOpen] = useState(false)
-  const classContainerContent = classNames({
-    h_100vh: true,
-    w_100vw: true,
-    pos_absolute: true,
-    't-init': true,
-    'l-init': true,
-    bgc_white: true,
-    d_none: !open,
-    debug: true
-  })
+  const classContainerContent = classNames(
+    'h_100vh w_100vw pos_absolute t-init l-init bgc_white debug',
+    {
+      d_none: !open
+    }
+  )
+
   return html`
-    <${MenuSVG} onClick=${() => setOpen(true)} />
+    <${MenuSVG} className="tld__d_none" onClick=${() => setOpen(true)} />
     <div class="${classContainerContent}">
-      Menu!
+      <header class="h-s d_flex pl-l pr-l ai_center jc_flex-end debug">
+        <${CloseSVG} onClick=${() => setOpen(false)} />
+      </header>
     </div>
   `
 }
