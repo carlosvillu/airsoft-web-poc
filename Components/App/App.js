@@ -15,7 +15,7 @@ const App = () => {
       <${AsyncRoute} path='/' getComponent=${loadHome} />
       <h1 path='/hello'>Hello</h1>
     </${Router}>
-  </${Layout}>  
+  </${Layout}>
   `
 }
 
