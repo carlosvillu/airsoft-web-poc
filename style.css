@@ -67,6 +67,7 @@
   --c-success: hsl(164, 95%, 43%);
   --c-warning: hsl(42, 100%, 70%);
 
+  --c-debug: hsl(0, 80%, 40%);
   
   --z-base-index: 0;
   --z-max-index: calc(var(--z-base-index) + 1);
@@ -203,4 +204,4 @@
 
 /* HELPERS */
 
-.debug {border: 1px solid red;}
+.debug {border: 1px solid var(--c-debug)}
