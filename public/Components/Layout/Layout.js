@@ -18,23 +18,23 @@ const Layout = ({children}) => {
         d__gta-holy-layout
         d__gtc-holy-layout"
     >
-      <header class="debug ga_header h-s">
+      <header class=" ga_header h-s bd_black">
         <${Topbar} />
       </header>
 
-      <nav class="ga_nav d_none tld__d_block debug">
+      <nav class="ga_nav d_none tld__d_block ">
         <${Navigation} />
       </nav>
 
-      <main class="ga_content debug">
+      <main class="ga_content ">
         ${children}
       </main>
 
-      <aside class="ga_side d_none d__d_block debug">
+      <aside class="ga_side d_none d__d_block ">
         ASIDE
       </aside>
 
-      <footer class="ga_footer h-s debug">
+      <footer class="ga_footer h-s ">
         <${Footer} />
       </footer>
     </section>

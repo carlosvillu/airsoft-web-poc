@@ -15,7 +15,6 @@ Button.TYPES = {
 }
 
 const STYLES_BY_TYPE = {
-  [Button.TYPES.FLAT]:
-    'bgc_transparent c-accent bd_none hover--bdrs-l hover--bd-debug'
+  [Button.TYPES.FLAT]: 'bgc_transparent c-accent bd_none pb-l pt-l'
 }
 export {Button}

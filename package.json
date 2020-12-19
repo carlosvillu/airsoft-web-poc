@@ -9,7 +9,7 @@
     "serve": "11.3.2"
   },
   "scripts": {
-    "start": "npx serve . -s -p 3000"
+    "start": "npx serve ./public -s -p 3000"
   },
   "repository": {
     "type": "git",

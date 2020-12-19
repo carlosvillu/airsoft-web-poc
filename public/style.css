@@ -9,22 +9,26 @@
   --base-radius: 4px;
   --base-space: 4px;
   --base-size: 50px;
+
   --font-family: helvetica, arial, sans-serif;
+
   --radius-l: calc(var(--radius-s) * 2);
   --radius-s: var(--base-radius);
   --radius-xs: calc(var(--radius-s) / 2);
   --radius-none: calc(var(--base-radius) * 0);
-  --size-xxxl: calc(var(--base-size) * 6);
-  --size-xxl: calc(var(--base-size) * 5);
+
+  --size-xxxl: calc(var(--base-size) * 8);
+  --size-xxl: calc(var(--base-size) * 6);
   --size-xl: calc(var(--base-size) * 4);
   --size-l: calc(var(--size-s) * 2);
   --size-s: var(--base-size);
   --size-xs: calc(var(--size-s) / 2);
+
+  --space-xl: calc(var(--space-s) * 4);
   --space-l: calc(var(--space-s) * 2);
   --space-s: var(--base-space);
   --space-xs: calc(var(--space-s) / 2);
   --space-none: calc(var(--base-space) * 0);
-
 
  /* Colors Palette */
 
@@ -33,15 +37,15 @@
  --c-gradient-2: calc(var(--c-gradient-base) * 3);
  --c-gradient-3: calc(var(--c-gradient-base) * 4);
 
-  --c-primary-l-3: hsl(60, 12%, calc( 60% + var(--c-gradient-2)));
-  --c-primary-l-2: hsl(60, 12%, calc( 60% + var(--c-gradient-1)));
-  --c-primary-l-1: hsl(60, 12%, calc( 60% + var(--c-gradient-base)));
+  --c-primary-l-3: hsl(78, 28%, calc( 30% + var(--c-gradient-2)));
+  --c-primary-l-2: hsl(78, 28%, calc( 30% + var(--c-gradient-1)));
+  --c-primary-l-1: hsl(78, 28%, calc( 30% + var(--c-gradient-base)));
 
-  --c-primary: hsl(60, 12%, 60%);
+  --c-primary: hsl(78, 28%, 30%);
   
-  --c-primary-d-1: hsl(60, 12%, calc( 60% - var(--c-gradient-base)));
-  --c-primary-d-2: hsl(60, 12%, calc( 60% - var(--c-gradient-1)));
-  --c-primary-d-3: hsl(60, 12%, calc( 60% - var(--c-gradient-2)));
+  --c-primary-d-1: hsl(78, 28%, calc( 30% - var(--c-gradient-base)));
+  --c-primary-d-2: hsl(78, 28%, calc( 30% - var(--c-gradient-1)));
+  --c-primary-d-3: hsl(78, 28%, calc( 30% - var(--c-gradient-2)));
   
   --c-secondary-l-3: hsl(21, 43%, calc( 65% + var(--c-gradient-2)));
   --c-secondary-l-2: hsl(21, 43%, calc( 65% + var(--c-gradient-1)));
@@ -82,8 +86,9 @@
 
 .ai_center {align-items: center;}
 
+.bd-secondary {border: 1px solid var(--c-secondary);}
+.bd_black {border: 1px solid black;}
 .bd_none {border: none;}
-.hover--bd-debug:hover {border: 1px solid red;}
 
 .bdrs-l {border-radius: var(--radius-l);}
 .hover--bdrs-l:hover {border-radius: var(--radius-l);}
@@ -149,6 +154,16 @@
 .ml-l {margin-left: var(--space-l);}
 .mr-l {margin-right: var(--space-l);}
 
+.p-xxl {padding: var(--space-xl);}
+.p-xl {padding: var(--space-xl);}
+
+
+.pb-l {padding-bottom: var(--space-l);}
+.pb-s {padding-bottom: var(--space-s);}
+.pb-xl {padding-bottom: var(--space-xl);}
+
+.pt-l {padding-top: var(--space-l);}
+
 .pos_absolute {position: absolute;}
 .pos_fixed {position: fixed;}
 .pos_relative {position: relative;}
@@ -204,3 +219,4 @@
 /* HELPERS */
 
 .debug {border: 1px solid red;}
+.hover--bd-debug:hover {border: 1px solid red;}

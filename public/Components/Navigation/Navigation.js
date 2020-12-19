@@ -1,13 +1,13 @@
 import {html} from 'https://npm.reversehttp.com/preact,preact/hooks,htm/preact'
 import {Button} from '../Button/Button.js'
-const array = ['foo', 'bar']
+
+import {i18n} from '../../i18n/i18n.js'
+
 const Navigation = () => {
   return html`
     <div class="d_flex fxd_column">
-      ${array.map(
-        label =>
-          html`<${Button} full type="${Button.TYPES.FLAT}">${label}</${Button}>`
-      )}
+      <${Button} full type="${Button.TYPES.FLAT}">${i18n.t('TEAM')}</${Button}>
+      <${Button} full type="${Button.TYPES.FLAT}">${i18n.t('STATS')}</${Button}>
     </div>
   `
 }
