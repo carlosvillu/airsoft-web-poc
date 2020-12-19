@@ -10,6 +10,8 @@ const EMPTY_DB = '{}'
 
 export class InMemoryUserRepository extends UserRepository {
   static create() {
+    // TODO: Pasar la dependencias por el metodo create y al constructor
+    // userEntityCreator: UserEntity.create
     return new InMemoryUserRepository({storage: window.localStorage})
   }
 
