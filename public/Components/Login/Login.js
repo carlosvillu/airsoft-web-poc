@@ -11,7 +11,7 @@ const Login = () => {
   // const [password, setPassword] = useState()
 
   return html`
-    <form class="d_flex fxd_column w_100vw h-full ai_center jc_center">
+    <form class="d_flex fxd_column w-full h-full ai_center jc_center">
       <label for="username" class="d_flex fxd_column w-xxl mb-l">
         <span class="pb-l pt-l">${i18n.t('USER_NAME')}</span>
         <input
