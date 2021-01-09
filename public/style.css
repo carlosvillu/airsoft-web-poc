@@ -145,17 +145,20 @@
 .h_100vh {height: 100vh;}
 
 .jc_flex-end {justify-content: flex-end;}
+.jc_center {justify-content: center;}
 
 .l-init {left: 0;}
 
 .m-l{margin: var(--space-l);}
 .m-s{margin: var(--space-s);}
 .m-xs{margin: var(--space-xs);}
+.mb-l {margin-bottom: var(--space-l);}
 .ml-l {margin-left: var(--space-l);}
 .mr-l {margin-right: var(--space-l);}
 
 .p-xxl {padding: var(--space-xl);}
 .p-xl {padding: var(--space-xl);}
+.p-l {padding: var(--space-l);}
 
 
 .pb-l {padding-bottom: var(--space-l);}

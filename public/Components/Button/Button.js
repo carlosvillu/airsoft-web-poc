@@ -2,12 +2,12 @@
 import {html} from 'https://npm.reversehttp.com/preact,preact/hooks,htm/preact'
 import 'https://npm.reversehttp.com/classnames'
 
-const Button = ({children, full, type}) => {
+const Button = ({children, full, type, onClick}) => {
   const classButton = classNames(STYLES_BY_TYPE[type], {
     'w-full': full
   })
   return html`
-    <button class="${classButton}">${children}</button>
+    <button class="${classButton}" onClick=${onClick}>${children}</button>
   `
 }
 Button.TYPES = {

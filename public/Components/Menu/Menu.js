@@ -18,14 +18,16 @@ const Menu = ({children}) => {
     }
   )
 
+  const closePanel = () => setOpen(false)
+
   return html`
     <${MenuSVG} className="tld__d_none" onClick=${() => setOpen(true)} />
     <div class="${classContainerContent}">
       <header class="h-s d_flex pl-l pr-l ai_center jc_flex-end ">
-        <${CloseSVG} onClick=${() => setOpen(false)} />
+        <${CloseSVG} onClick=${closePanel} />
       </header>
       <div class="p-xl">
-        <${Navigation} />
+        <${Navigation} onNavigate=${closePanel} />
       </div>
     </div>
   `
