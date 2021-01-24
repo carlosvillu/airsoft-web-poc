@@ -4,7 +4,12 @@
   "description": "Airsof PoC Web",
   "main": "app.js",
   "devDependencies": {
-    "@s-ui/lint": "3",
+    "eslint": "^7.16.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.22.0",
     "snowpack": "3.0.11"
   },
   "scripts": {
@@ -17,14 +22,5 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "eslintConfig": {
-    "extends": [
-      "./node_modules/@s-ui/lint/eslintrc.js"
-    ]
-  },
-  "prettier": "./node_modules/@s-ui/lint/.prettierrc.js",
-  "stylelint": {
-    "extends": "./node_modules/@s-ui/lint/stylelint.config.js"
-  }
+  "license": "ISC"
 }
