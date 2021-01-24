@@ -1,28 +1,27 @@
-import {UserEntity} from '../Models/UserEntity.js'
-import {UserRepository} from './UserRepository.js'
-import {EpicFailUserError} from '../Errors/EpicFailUserError.js'
-import {InvalidUserError} from '../Errors/InvalidUserError.js'
-import {NotFoundUserError} from '../Errors/NotFoundUserError.js'
-import {StatusValueObject} from '../Models/StatusValueObject.js'
+import { UserEntity } from '../Models/UserEntity.js'
+import { UserRepository } from './UserRepository.js'
+import { EpicFailUserError } from '../Errors/EpicFailUserError.js'
+import { InvalidUserError } from '../Errors/InvalidUserError.js'
+import { NotFoundUserError } from '../Errors/NotFoundUserError.js'
+import { StatusValueObject } from '../Models/StatusValueObject.js'
 
 const USERS_DB_KEY = '__USERS_DB__'
 const CURRENT_USER_KEY = '__USERS_DB_CURRENT_USER__'
 const EMPTY_DB = '{}'
 
 export class InMemoryUserRepository extends UserRepository {
-  static create() {
+  static create () {
     // TODO: Pasar la dependencias por el metodo create y al constructor
     // userEntityCreator: UserEntity.create
-    return new InMemoryUserRepository({storage: window.localStorage})
+    return new InMemoryUserRepository({ storage: window.localStorage })
   }
 
-  constructor({storage}) {
+  constructor ({ storage }) {
     super()
     this._storage = storage
   }
 
-  async signin({user, password}) {
-    debugger
+  async signin ({ user, password }) {
     try {
       const userDBJSON = this._storage.getItem(USERS_DB_KEY) ?? EMPTY_DB
       const userDB = JSON.parse(userDBJSON)
@@ -56,7 +55,7 @@ export class InMemoryUserRepository extends UserRepository {
     }
   }
 
-  async signup({user, password}) {
+  async signup ({ user, password }) {
     try {
       const userDBJSON = this._storage.getItem(USERS_DB_KEY) ?? EMPTY_DB
       const userDB = JSON.parse(userDBJSON)
@@ -88,7 +87,7 @@ export class InMemoryUserRepository extends UserRepository {
     }
   }
 
-  async signout() {
+  async signout () {
     try {
       const userDBJSON = this._storage.getItem(USERS_DB_KEY) ?? EMPTY_DB
       const userDB = JSON.parse(userDBJSON)
@@ -105,13 +104,13 @@ export class InMemoryUserRepository extends UserRepository {
       const nextUserDBJSON = JSON.stringify(nextUserDB)
       this._storage.setItem(USERS_DB_KEY, nextUserDBJSON)
 
-      return StatusValueObject.create({status: true})
+      return StatusValueObject.create({ status: true })
     } catch (error) {
       throw EpicFailUserError.create(error.message)
     }
   }
 
-  async current() {
+  async current () {
     try {
       const userDBJSON = this._storage.getItem(USERS_DB_KEY) ?? EMPTY_DB
       const userDB = JSON.parse(userDBJSON)
