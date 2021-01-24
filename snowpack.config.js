@@ -3,16 +3,10 @@
 
 /** @type {import("snowpack").SnowpackUserConfig } */
 module.exports = {
-  mount: {
-    /* ... */
-  },
-  plugins: [
-    /* ... */
-  ],
-  packageOptions: {
-    /* ... */
-  },
+  mount: {},
+  plugins: [],
+  packageOptions: {},
   devOptions: {},
   buildOptions: {},
-  routes: [{match: 'routes', src: '.*', dest: '/index.html'}]
+  routes: [{ match: 'routes', src: '.*', dest: '/index.html' }]
 }
