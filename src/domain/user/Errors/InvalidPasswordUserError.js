@@ -1,5 +1,5 @@
 export class InvalidPasswordUserError extends Error {
-  static create(msg) {
+  static create (msg) {
     return new InvalidPasswordUserError(msg)
   }
 }

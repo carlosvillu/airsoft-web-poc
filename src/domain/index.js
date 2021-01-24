@@ -7,13 +7,13 @@ const UCs = {
 }
 
 export class Airsoft {
-  static create() {
+  static create () {
     return new Airsoft()
   }
 
-  get(uc) {
+  get (uc) {
     return {
-      async execute() {
+      async execute () {
         const klass = await UCs[uc].call()
         return klass.create().execute(...arguments)
       }

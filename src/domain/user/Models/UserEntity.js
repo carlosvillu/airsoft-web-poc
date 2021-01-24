@@ -1,4 +1,4 @@
-import {InvalidUserError} from '../Errors/InvalidUserError.js'
+import { InvalidUserError } from '../Errors/InvalidUserError.js'
 
 const UUIDGeneratorBrowser = () =>
   ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
@@ -9,7 +9,7 @@ const UUIDGeneratorBrowser = () =>
   )
 
 export class UserEntity {
-  static validate({id, userName}) {
+  static validate ({ id, userName }) {
     if (!id || !userName) {
       throw InvalidUserError.create(
         `Invalid User id(${id}) userName(${userName})`
@@ -17,7 +17,7 @@ export class UserEntity {
     }
   }
 
-  static create({id, userName} = {}) {
+  static create ({ id, userName } = {}) {
     let newID
     if (!id) {
       newID = UUIDGeneratorBrowser()
@@ -25,25 +25,25 @@ export class UserEntity {
 
     const userID = id || newID
 
-    UserEntity.validate({id: userID, userName})
+    UserEntity.validate({ id: userID, userName })
 
-    return new UserEntity({id: userID, userName})
+    return new UserEntity({ id: userID, userName })
   }
 
-  constructor({id, userName}) {
+  constructor ({ id, userName }) {
     this._id = id
     this._userName = userName
   }
 
-  id() {
+  id () {
     return this._id
   }
 
-  userName() {
+  userName () {
     return this._userName
   }
 
-  toJSON() {
+  toJSON () {
     return {
       id: this._id,
       userName: this._userName

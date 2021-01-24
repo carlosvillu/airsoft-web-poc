@@ -1,5 +1,5 @@
 export class InvalidStatusUserError extends Error {
-  static create(msg) {
+  static create (msg) {
     return new InvalidStatusUserError(msg)
   }
 }

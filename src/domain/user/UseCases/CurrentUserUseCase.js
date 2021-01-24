@@ -1,15 +1,15 @@
-import {InMemoryUserRepository} from '../Repositories/InMemoryUserRepository.js'
+import { InMemoryUserRepository } from '../Repositories/InMemoryUserRepository.js'
 export class CurrentUserUseCase {
-  static create() {
+  static create () {
     const repository = InMemoryUserRepository.create()
-    return new CurrentUserUseCase({repository})
+    return new CurrentUserUseCase({ repository })
   }
 
-  constructor({repository}) {
+  constructor ({ repository }) {
     this._repository = repository
   }
 
-  async execute() {
+  async execute () {
     try {
       const user = await this._repository.current()
 

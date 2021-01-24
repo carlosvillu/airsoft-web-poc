@@ -1,20 +1,20 @@
-import {InMemoryUserRepository} from '../Repositories/InMemoryUserRepository.js'
-import {PasswordValueObject} from '../Models/PasswordValueObject.js'
-import {UserEntity} from '../Models/UserEntity.js'
+import { InMemoryUserRepository } from '../Repositories/InMemoryUserRepository.js'
+import { PasswordValueObject } from '../Models/PasswordValueObject.js'
+import { UserEntity } from '../Models/UserEntity.js'
 
 export class SignInUserUseCase {
-  static create() {
+  static create () {
     const repository = InMemoryUserRepository.create()
-    return new SignInUserUseCase({repository})
+    return new SignInUserUseCase({ repository })
   }
 
-  constructor({repository}) {
+  constructor ({ repository }) {
     this._repository = repository
   }
 
-  async execute({userName, password} = {}) {
-    const user = UserEntity.create({userName})
-    const passwordVO = PasswordValueObject.create({password})
+  async execute ({ userName, password } = {}) {
+    const user = UserEntity.create({ userName })
+    const passwordVO = PasswordValueObject.create({ password })
     const userCreated = await this._repository.signin({
       user,
       password: passwordVO
