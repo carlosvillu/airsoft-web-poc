@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "description": "Airsof PoC Web",
   "main": "app.js",
-  "dependencies": {},
   "devDependencies": {
     "@s-ui/lint": "3",
-    "serve": "11.3.2"
+    "snowpack": "3.0.11"
   },
   "scripts": {
-    "start": "npx serve ./public -s -p 3000"
+    "start": "snowpack dev",
+    "build": "snowpack build"
   },
   "repository": {
     "type": "git",

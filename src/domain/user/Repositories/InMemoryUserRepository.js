@@ -22,6 +22,7 @@ export class InMemoryUserRepository extends UserRepository {
   }
 
   async signin({user, password}) {
+    debugger
     try {
       const userDBJSON = this._storage.getItem(USERS_DB_KEY) ?? EMPTY_DB
       const userDB = JSON.parse(userDBJSON)
