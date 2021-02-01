@@ -1,5 +1,5 @@
 export class NotFoundUserError extends Error {
-  static create (msg) {
+  static create (msg: string) {
     return new NotFoundUserError(msg)
   }
 }

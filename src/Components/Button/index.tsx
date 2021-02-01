@@ -1,8 +1,8 @@
 import React from 'https://cdn.skypack.dev/react'
-import cx from 'https://cdn.skypack.dev/classnames'
+import classNames from 'https://cdn.skypack.dev/classnames'
 
-const Button = ({children, full, type, onClick}) => {
-  const classButton = cx(STYLES_BY_TYPE[type], {
+const Button = ({ children, full, type, onClick }) => {
+  const classButton = classNames(STYLES_BY_TYPE[type], {
     'w-full': full
   })
   return (
@@ -18,4 +18,4 @@ Button.TYPES = {
 const STYLES_BY_TYPE = {
   [Button.TYPES.FLAT]: 'bgc_transparent c-accent bd_none pb-l pt-l'
 }
-export {Button}
+export { Button }
