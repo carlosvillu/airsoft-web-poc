@@ -20,7 +20,7 @@ export class CurrentUserUseCase {
 
       return user?.toJSON()
     } catch {
-      return null
+      return undefined
     }
   }
 }

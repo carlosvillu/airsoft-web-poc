@@ -1,8 +1,8 @@
-import React from 'https://cdn.skypack.dev/react'
+import React from 'react'
 
-import {Menu} from '../Menu'
+import { Menu } from '../Menu'
 
-const Topbar = ({children}) => {
+const Topbar = () => {
   return (
     <div className="h-full d_flex ml-l mr-l ai_center bg-c-primary">
       <Menu />
@@ -10,4 +10,4 @@ const Topbar = ({children}) => {
   )
 }
 
-export {Topbar}
+export { Topbar }

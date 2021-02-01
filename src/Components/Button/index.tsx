@@ -1,7 +1,14 @@
-import React from 'https://cdn.skypack.dev/react'
-import classNames from 'https://cdn.skypack.dev/classnames'
+import React from 'react'
+import classNames from 'classnames'
 
-const Button = ({ children, full, type, onClick }) => {
+type Props = {
+  children: React.ReactChild,
+  full: boolean,
+  type: string,
+  onClick?: React.EventHandler<React.SyntheticEvent>
+}
+
+const Button = ({ children, full, type, onClick }: Props) => {
   const classButton = classNames(STYLES_BY_TYPE[type], {
     'w-full': full
   })

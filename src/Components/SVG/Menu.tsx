@@ -1,6 +1,11 @@
-import React from 'https://cdn.skypack.dev/react'
+import React from 'react'
 
-const MenuSVG = ({onClick, className}) => {
+type Props = {
+  onClick: React.EventHandler<React.SyntheticEvent>,
+  className?: string
+}
+
+const MenuSVG = ({ onClick, className }: Props) => {
   return (
     <svg
       className={className}
@@ -8,7 +13,7 @@ const MenuSVG = ({onClick, className}) => {
       width="18"
       height="18"
       viewBox="0 0 24 24"
-      style={{width: 'var(--size-xs)', height: 'var(--size-xs)'}}
+      style={{ width: 'var(--size-xs)', height: 'var(--size-xs)' }}
       onClick={onClick}
     >
       <path fill="none" d="M0 0h24v24H0z" />
@@ -17,4 +22,4 @@ const MenuSVG = ({onClick, className}) => {
   )
 }
 
-export {MenuSVG}
+export { MenuSVG }

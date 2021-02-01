@@ -1,9 +1,9 @@
-import React from 'https://cdn.skypack.dev/react'
+import React from 'react'
 import {
   Route,
   Switch,
   BrowserRouter as Router
-} from 'https://cdn.skypack.dev/react-router-dom'
+} from 'react-router-dom'
 
 import { Layout } from '../Layout'
 import { Home } from '../Home'
