@@ -1,7 +1,7 @@
-import React, {useState} from 'https://cdn.skypack.dev/react'
+import React from 'react'
 
-import {Button} from '../Button'
-import {i18n} from '../../i18n/i18n.js'
+import { Button } from '../Button'
+import { i18n } from '../../i18n/i18n.js'
 
 const Login = () => {
   // const [username, setUsername] = useState()
@@ -37,4 +37,4 @@ const Login = () => {
   )
 }
 
-export {Login}
+export { Login }

@@ -1,10 +1,10 @@
-import React, {useState, useEffect} from 'https://cdn.skypack.dev/react'
-import {useHistory} from 'https://cdn.skypack.dev/react-router-dom'
+import React, { useState, useEffect } from 'react'
+import { useHistory } from 'react-router-dom'
 
-import {Button} from '../Button'
-import {i18n} from '../../i18n/i18n.js'
+import { Button } from '../Button'
+import { i18n } from '../../i18n/i18n.js'
 
-const Navigation = ({onNavigate}) => {
+const Navigation = ({ onNavigate }: {onNavigate?: Function}) => {
   const history = useHistory()
   const [user, setUser] = useState()
 
@@ -18,7 +18,7 @@ const Navigation = ({onNavigate}) => {
 
   const handleOnLogin = () => {
     history.push('/login', true)
-    onNavigate()
+    onNavigate && onNavigate()
   }
   const handleOnLogOut = () => {
     window.domain
@@ -26,7 +26,7 @@ const Navigation = ({onNavigate}) => {
       .execute()
       .then(resp => {
         if (resp.status) {
-          setUser(null)
+          setUser(undefined)
         }
       })
       .catch(window.console.error.bind(window.console,'Error in Navigation logout the current user')) // eslint-disable-line
@@ -56,4 +56,4 @@ const Navigation = ({onNavigate}) => {
   )
 }
 
-export {Navigation}
+export { Navigation }

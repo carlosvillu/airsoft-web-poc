@@ -1,5 +1,5 @@
-import { UserEntity } from '../Models/UserEntity.js'
-import { UserRepository } from './UserRepository.js'
+import { UserEntity, UserEntityJSON } from '../Models/UserEntity.js'
+import type { UserRepository, ParamsUserAndPassword } from './UserRepository.js'
 import { EpicFailUserError } from '../Errors/EpicFailUserError.js'
 import { InvalidUserError } from '../Errors/InvalidUserError.js'
 import { NotFoundUserError } from '../Errors/NotFoundUserError.js'
@@ -9,24 +9,26 @@ const USERS_DB_KEY = '__USERS_DB__'
 const CURRENT_USER_KEY = '__USERS_DB_CURRENT_USER__'
 const EMPTY_DB = '{}'
 
-export class InMemoryUserRepository extends UserRepository {
-  static create () {
-    // TODO: Pasar la dependencias por el metodo create y al constructor
-    // userEntityCreator: UserEntity.create
+type ExtendedUserEntityJSON = UserEntityJSON & {password: string}
+
+export class InMemoryUserRepository implements UserRepository {
+  private storage: Storage
+
+  static create (): InMemoryUserRepository {
     return new InMemoryUserRepository({ storage: window.localStorage })
   }
 
-  constructor ({ storage }) {
-    super()
-    this._storage = storage
+  constructor ({ storage }: {storage: Storage}) {
+    this.storage = storage
   }
 
-  async signin ({ user, password }) {
+  async signin ({ user, password }: ParamsUserAndPassword) {
     try {
-      const userDBJSON = this._storage.getItem(USERS_DB_KEY) ?? EMPTY_DB
+      const userDBJSON = this.storage.getItem(USERS_DB_KEY) ?? EMPTY_DB
       const userDB = JSON.parse(userDBJSON)
 
-      const userJSON = Object.values(userDB).find(
+      const usersJSON = Object.values(userDB) as ExtendedUserEntityJSON[]
+      const userJSON = usersJSON.find(
         u => u.userName === user.userName()
       )
 
@@ -44,7 +46,7 @@ export class InMemoryUserRepository extends UserRepository {
       }
 
       const nextUserDBJSON = JSON.stringify(nextUserDB)
-      this._storage.setItem(USERS_DB_KEY, nextUserDBJSON)
+      this.storage.setItem(USERS_DB_KEY, nextUserDBJSON)
 
       return UserEntity.create(userJSON)
     } catch (error) {
@@ -55,12 +57,13 @@ export class InMemoryUserRepository extends UserRepository {
     }
   }
 
-  async signup ({ user, password }) {
+  async signup ({ user, password }: ParamsUserAndPassword) {
     try {
-      const userDBJSON = this._storage.getItem(USERS_DB_KEY) ?? EMPTY_DB
+      const userDBJSON = this.storage.getItem(USERS_DB_KEY) ?? EMPTY_DB
       const userDB = JSON.parse(userDBJSON)
 
-      if (Object.values(userDB).find(u => u.userName === user.userName())) {
+      const usersJSON = Object.values(userDB) as ExtendedUserEntityJSON[]
+      if (usersJSON.find(u => u.userName === user.userName())) {
         throw InvalidUserError.create(
           `Forbidden create user with userName(${user.userName()})`
         )
@@ -68,14 +71,14 @@ export class InMemoryUserRepository extends UserRepository {
 
       const nextUserDB = {
         ...userDB,
-        [user.id()]: {
+        [user.id()!]: {
           ...user.toJSON(),
           password: password.value()
         }
       }
 
       const nextUserDBJSON = JSON.stringify(nextUserDB)
-      this._storage.setItem(USERS_DB_KEY, nextUserDBJSON)
+      this.storage.setItem(USERS_DB_KEY, nextUserDBJSON)
 
       return user
     } catch (error) {
@@ -89,7 +92,7 @@ export class InMemoryUserRepository extends UserRepository {
 
   async signout () {
     try {
-      const userDBJSON = this._storage.getItem(USERS_DB_KEY) ?? EMPTY_DB
+      const userDBJSON = this.storage.getItem(USERS_DB_KEY) ?? EMPTY_DB
       const userDB = JSON.parse(userDBJSON)
 
       if (!userDB[CURRENT_USER_KEY]) {
@@ -102,7 +105,7 @@ export class InMemoryUserRepository extends UserRepository {
       }
 
       const nextUserDBJSON = JSON.stringify(nextUserDB)
-      this._storage.setItem(USERS_DB_KEY, nextUserDBJSON)
+      this.storage.setItem(USERS_DB_KEY, nextUserDBJSON)
 
       return StatusValueObject.create({ status: true })
     } catch (error) {
@@ -112,7 +115,7 @@ export class InMemoryUserRepository extends UserRepository {
 
   async current () {
     try {
-      const userDBJSON = this._storage.getItem(USERS_DB_KEY) ?? EMPTY_DB
+      const userDBJSON = this.storage.getItem(USERS_DB_KEY) ?? EMPTY_DB
       const userDB = JSON.parse(userDBJSON)
 
       const currentUser = userDB[CURRENT_USER_KEY]

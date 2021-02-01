@@ -1,11 +1,11 @@
-import React, {Fragment, useState} from 'https://cdn.skypack.dev/react'
-import cx from 'https://cdn.skypack.dev/classnames'
+import React, { Fragment, useState } from 'react'
+import cx from 'classnames'
 
-import {MenuSVG} from '../SVG/Menu.jsx'
-import {CloseSVG} from '../SVG/Close.jsx'
-import {Navigation} from '../Navigation'
+import { MenuSVG } from '../SVG/Menu.jsx'
+import { CloseSVG } from '../SVG/Close.jsx'
+import { Navigation } from '../Navigation'
 
-const Menu = ({children}) => {
+const Menu = () => {
   const [open, setOpen] = useState(false)
   const classContainerContent = cx(
     'h_100vh w_100vw pos_absolute t-init l-init bgc-primary',
@@ -31,4 +31,4 @@ const Menu = ({children}) => {
   )
 }
 
-export {Menu}
+export { Menu }

@@ -1,4 +1,4 @@
-const interOP = (fn, name) => () => fn().then(mod => mod[name])
+const interOP = (fn: Function, name: string) => () => fn().then((mod: Record<string, any>) => mod[name])
 const UCs = {
   CurrentUserUseCase: interOP(() => import('./user/UseCases/CurrentUserUseCase.js'), 'CurrentUserUseCase'), // eslint-disable-line
   SignUpUserUseCase: interOP(() => import('./user/UseCases/SignUpUserUseCase.js'), 'SignUpUserUseCase'), // eslint-disable-line
@@ -6,15 +6,17 @@ const UCs = {
   SignOutUserUseCase: interOP(() => import('./user/UseCases/SignOutUserUseCase.js'), 'SignOutUserUseCase') // eslint-disable-line
 }
 
+type UseCasesNames = keyof typeof UCs
+
 export class Airsoft {
   static create () {
     return new Airsoft()
   }
 
-  get (uc) {
+  get (uc: UseCasesNames) {
     return {
       async execute () {
-        const klass = await UCs[uc].call()
+        const klass = await UCs[uc]()
         return klass.create().execute(...arguments)
       }
     }

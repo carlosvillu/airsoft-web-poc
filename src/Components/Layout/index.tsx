@@ -1,9 +1,9 @@
-import React from 'https://cdn.skypack.dev/react'
-import {Footer} from '../Footer'
-import {Topbar} from '../Topbar'
-import {Navigation} from '../Navigation'
+import React from 'react'
+import { Footer } from '../Footer'
+import { Topbar } from '../Topbar'
+import { Navigation } from '../Navigation'
 
-const Layout = ({children}) => {
+const Layout = ({ children }: {children: React.ReactChild}) => {
   return (
     <section
       className="
@@ -37,4 +37,4 @@ const Layout = ({children}) => {
   )
 }
 
-export {Layout}
+export { Layout }
